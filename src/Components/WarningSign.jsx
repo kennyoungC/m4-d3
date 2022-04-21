@@ -2,9 +2,12 @@
 
 const WarningSign = (props) => {
   return (
-    <div className="alert alert-danger" role="alert">
-      {props.text}
-    </div>
+    <>
+      <h3>Ex. 1</h3>
+      <div className="alert alert-danger" role="alert">
+        {props.text}
+      </div>
+    </>
   )
 }
 
