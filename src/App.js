@@ -2,6 +2,7 @@ import logo from "./logo.svg"
 import "./App.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import WarningSign from "./Components/WarningSign"
+import MyBadge from "./Components/MyBadge"
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <WarningSign text="kenneth" />
+        <MyBadge color="danger" text="verified" />
         <a
           className="App-link"
           href="https://reactjs.org"
