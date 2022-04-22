@@ -4,7 +4,9 @@ import { Component } from "react"
 class BookList extends Component {
   state = {
     query: "",
+    comments: [],
   }
+
   render() {
     return (
       <Container>
@@ -21,9 +23,11 @@ class BookList extends Component {
         </Row>
         <Row>
           {this.props.book
-            .filter((b) => b.title.toLowerCase().includes(this.state.query))
+            .filter(
+              (b) => b.title.toLowerCase().indexOf(this.state.query) !== -1
+            )
             .map((b, i) => (
-              <Col sm={6} md={4} lg={3} key={i + 1}>
+              <Col sm={6} key={i + 1}>
                 <SingleBook book={b} />
               </Col>
             ))}
