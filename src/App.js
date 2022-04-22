@@ -6,6 +6,7 @@ import SingleBook from "./Components/SingleBook"
 import ScifiBook from "./Data/Scifibook.json"
 import BookList from "./Components/BookList"
 import { Container, Row, Col } from "react-bootstrap"
+import "bootstrap-icons/font/bootstrap-icons.css"
 function App() {
   return (
     <div className="App">

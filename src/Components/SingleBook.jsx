@@ -12,16 +12,18 @@ class SingleBook extends Component {
       <Container>
         <Row>
           <Col>
-            <Card className="text-dark mb-3">
+            <Card
+              className="text-dark mb-3"
+              style={{
+                border: this.state.selected ? "2px solid red" : "none",
+              }}
+            >
               <Card.Img
                 variant="top"
                 src={this.props.book.img}
                 onClick={() =>
                   this.setState({ selected: !this.state.selected })
                 }
-                // style={{
-                //   border: this.state.selected ? "2px solid red" : "none",
-                // }}
               />
               <Card.Body>
                 <Card.Title>{this.props.book.title}</Card.Title>

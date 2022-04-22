@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { ListGroup, Button } from "react-bootstrap"
+import { ListGroup, Button, Anchor } from "react-bootstrap"
 class CommentList extends Component {
   deleteComment = async (id) => {
     const resp = await fetch(
@@ -23,11 +23,22 @@ class CommentList extends Component {
       <div>
         <ListGroup>
           {this.props.commentsArray.map((com) => (
-            <ListGroup.Item key={com._id}>
+            <ListGroup.Item
+              key={com._id}
+              className="d-flex justify-content-between"
+            >
               {com.comment} - ratings:{com.rate}
-              <Button onClick={() => this.deleteComment(com._id)}>
-                Delete
-              </Button>
+              <div className="position-relative see-more">
+                <i class="bi bi-three-dots"></i>
+                <Anchor
+                  href="#"
+                  className="position-absolute"
+                  onClick={() => this.deleteComment(com._id)}
+                >
+                  delete
+                  {/* <i class="bi bi-trash"></i> */}
+                </Anchor>
+              </div>
             </ListGroup.Item>
           ))}
         </ListGroup>

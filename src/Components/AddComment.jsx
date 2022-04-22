@@ -30,7 +30,7 @@ class AddComment extends Component {
         alert("new comment added")
         this.setState({
           newComment: {
-            rate: "Ratings",
+            rate: "Rate this book",
             comment: "",
             elementId: this.props.commentsAsin,
           },
@@ -70,7 +70,7 @@ class AddComment extends Component {
               })
             }
           >
-            <option>Ratings</option>
+            <option>Rate This Book</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>

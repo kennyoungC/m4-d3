@@ -15,3 +15,34 @@
 .card.bord {
   border: 2px solid red;
 }
+.list-group-item,
+.list-group-item:last-child {
+  border-top-width: none;
+  margin: 12px 0;
+  border-radius: 10px 50px 10px 50px !important;
+  background-color: antiquewhite !important;
+  display: flex;
+  justify-content: space-between;
+}
+.see-more {
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+.see-more:hover a {
+  opacity: 1;
+  pointer-events: all;
+}
+.see-more a:hover {
+  text-decoration: underline;
+}
+.see-more > a {
+  pointer-events: none;
+  top: 30px;
+  right: 10px;
+  background-color: rgb(128, 125, 125);
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 0 6px;
+  z-index: 2222;
+  opacity: 0;
+}
