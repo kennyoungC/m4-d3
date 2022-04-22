@@ -1,9 +1,11 @@
 import React, { Component } from "react"
 import AddComment from "./AddComment"
 import CommentList from "./CommentList"
+import { Spinner } from "react-bootstrap"
 class CommentArea extends Component {
   state = {
     comments: [],
+    isLoading: true,
   }
   componentDidMount = async () => {
     this.fetchComment()
@@ -22,15 +24,26 @@ class CommentArea extends Component {
         },
       }
     )
-    const data = await response.json()
-    console.log(data)
-    this.setState({
-      comments: data,
-    })
+    if (response.ok) {
+      const data = await response.json()
+
+      this.setState({
+        comments: data,
+      })
+      this.setState({
+        isLoading: false,
+      })
+    }
   }
   render() {
     return (
       <div>
+        <h4>comments</h4>
+        {this.state.isLoading && (
+          <div className="text-center">
+            <Spinner animation="border" variant="info" />
+          </div>
+        )}
         <CommentList commentsArray={this.state.comments} />
         <AddComment commentsAsin={this.props.asin} />
       </div>

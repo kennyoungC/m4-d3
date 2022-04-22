@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { ListGroup, Button, Anchor } from "react-bootstrap"
+import { ListGroup, Spinner, Anchor } from "react-bootstrap"
 class CommentList extends Component {
   deleteComment = async (id) => {
     const resp = await fetch(
@@ -14,6 +14,7 @@ class CommentList extends Component {
     )
     if (resp.ok) {
       alert("comment successfully deleted")
+      this.setState({ isLoading: false })
     } else {
       alert("comment was successfull deleted")
     }
