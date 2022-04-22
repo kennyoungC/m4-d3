@@ -3,7 +3,7 @@ import { FormControl, Form, Button } from "react-bootstrap"
 class AddComment extends Component {
   state = {
     newComment: {
-      rate: "Ratings",
+      rate: "",
       comment: "",
       elementId: this.props.commentsAsin,
     },
@@ -30,7 +30,7 @@ class AddComment extends Component {
         alert("new comment added")
         this.setState({
           newComment: {
-            rate: "Rate this book",
+            rate: "",
             comment: "",
             elementId: this.props.commentsAsin,
           },
@@ -77,7 +77,12 @@ class AddComment extends Component {
             <option value="3">4</option>
             <option value="3">5</option>
           </Form.Select>
-          <Button type="submit" variant="primary">
+          <Button
+            disabled={this.state.newComment.comment.length < 3}
+            className="mt-2"
+            type="submit"
+            variant="secondary"
+          >
             Add Comment
           </Button>
         </Form>

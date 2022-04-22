@@ -30,7 +30,7 @@ class CommentList extends Component {
             >
               {com.comment} - ratings:{com.rate}
               <div className="position-relative see-more">
-                <i class="bi bi-three-dots"></i>
+                <i className="bi bi-three-dots"></i>
                 <Anchor
                   href="#"
                   className="position-absolute"

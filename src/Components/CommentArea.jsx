@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import AddComment from "./AddComment"
 import CommentList from "./CommentList"
 import { Spinner } from "react-bootstrap"
+import LoadingComponent from "./LoadingComponent"
 class CommentArea extends Component {
   state = {
     comments: [],
@@ -9,9 +10,6 @@ class CommentArea extends Component {
   }
   componentDidMount = async () => {
     this.fetchComment()
-    setTimeout(() => {
-      console.log(this.state.id)
-    }, 5000)
   }
   fetchComment = async () => {
     const response = await fetch(
@@ -39,11 +37,7 @@ class CommentArea extends Component {
     return (
       <div>
         <h4>comments</h4>
-        {this.state.isLoading && (
-          <div className="text-center">
-            <Spinner animation="border" variant="info" />
-          </div>
-        )}
+        {this.state.isLoading && <LoadingComponent />}
         <CommentList commentsArray={this.state.comments} />
         <AddComment commentsAsin={this.props.asin} />
       </div>

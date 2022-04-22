@@ -9,7 +9,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  /* font-size: calc(10px + 2vmin); */
   color: white;
 }
 .card.bord {
@@ -17,10 +17,10 @@
 }
 .list-group-item,
 .list-group-item:last-child {
-  padding: 12px 6px;
+  /* padding: 12px 6px; */
   border-top-width: none;
-  margin: 12px 0;
-  border-radius: 10px 50px 10px 50px !important;
+  margin: 6px 0;
+  border-radius: 5px 26px 5px 26px !important;
   background-color: antiquewhite !important;
   display: flex;
   justify-content: space-between;
@@ -38,12 +38,12 @@
 }
 .see-more > a {
   pointer-events: none;
-  top: 20px;
+  top: 15px;
   right: 10px;
   background-color: rgb(128, 125, 125);
   text-decoration: none;
   border-radius: 10px;
-  padding: 0 6px;
+  padding: 6px 8px;
   z-index: 2222;
   opacity: 0;
 }
