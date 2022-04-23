@@ -8,12 +8,10 @@ class AddComment extends Component {
       elementId: this.props.commentsAsin,
     },
   }
-  // componentDidMount = () => {
-  //   this.postData()
-  // }
+
   postData = async (e) => {
+    e.preventDefault()
     try {
-      e.preventDefault()
       const response = await fetch(
         "https://striveschool-api.herokuapp.com/api/comments/",
         {
@@ -35,6 +33,9 @@ class AddComment extends Component {
             elementId: this.props.commentsAsin,
           },
         })
+      } else {
+        console.log("error")
+        alert("your comment was not sent")
       }
     } catch (error) {
       console.log(error)
@@ -44,7 +45,9 @@ class AddComment extends Component {
   render() {
     return (
       <div>
-        <Form onSubmit={(e) => this.postData(e)}>
+        {/* <Form onSubmit={(e) => this.postData(e)}> */}
+        {/* or */}
+        <Form onSubmit={this.postData}>
           <FormControl
             placeholder="Add Comments"
             className="mb-1"

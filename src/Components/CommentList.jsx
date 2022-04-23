@@ -33,7 +33,7 @@ class CommentList extends Component {
                 {com.comment} <StarRating numOfStars={com.rate} />
               </span>
 
-              <div className="position-relative see-more">
+              <span className="position-relative see-more">
                 <i className="bi bi-three-dots"></i>
                 <Anchor
                   href="#"
@@ -41,9 +41,8 @@ class CommentList extends Component {
                   onClick={() => this.deleteComment(com._id)}
                 >
                   delete
-                  {/* <i class="bi bi-trash"></i> */}
                 </Anchor>
-              </div>
+              </span>
             </ListGroup.Item>
           ))}
         </ListGroup>
