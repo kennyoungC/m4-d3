@@ -1,7 +1,6 @@
-import { Card, Button, Container, Row, Col } from "react-bootstrap"
+import { Card, Container, Row, Col } from "react-bootstrap"
 import { Component } from "react"
 import CommentArea from "./CommentArea"
-import ScifiBooks from "../Data/Scifibook.json"
 class SingleBook extends Component {
   state = {
     selected: false,

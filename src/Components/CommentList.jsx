@@ -1,5 +1,6 @@
 import React, { Component } from "react"
-import { ListGroup, Spinner, Anchor } from "react-bootstrap"
+import { ListGroup, Anchor } from "react-bootstrap"
+import StarRating from "./StarRating"
 class CommentList extends Component {
   deleteComment = async (id) => {
     const resp = await fetch(
@@ -14,7 +15,6 @@ class CommentList extends Component {
     )
     if (resp.ok) {
       alert("comment successfully deleted")
-      this.setState({ isLoading: false })
     } else {
       alert("comment was successfull deleted")
     }
@@ -26,9 +26,13 @@ class CommentList extends Component {
           {this.props.commentsArray.map((com) => (
             <ListGroup.Item
               key={com._id}
-              className="d-flex justify-content-between"
+              className="d-flex justify-content-between
+              align-items-center"
             >
-              {com.comment} - ratings:{com.rate}
+              <span className="d-flex flex-column align-items-start">
+                {com.comment} <StarRating numOfStars={com.rate} />
+              </span>
+
               <div className="position-relative see-more">
                 <i className="bi bi-three-dots"></i>
                 <Anchor

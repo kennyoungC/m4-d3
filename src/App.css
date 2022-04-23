@@ -21,7 +21,7 @@
   border-top-width: none;
   margin: 6px 0;
   border-radius: 5px 26px 5px 26px !important;
-  background-color: antiquewhite !important;
+  background-color: rgba(154, 149, 144, 0.648) !important;
   display: flex;
   justify-content: space-between;
 }

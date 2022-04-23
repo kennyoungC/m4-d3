@@ -47,7 +47,9 @@ class AddComment extends Component {
         <Form onSubmit={(e) => this.postData(e)}>
           <FormControl
             placeholder="Add Comments"
-            type="text"
+            className="mb-1"
+            as="textarea"
+            rows={2}
             value={this.state.newComment.comment}
             onChange={(e) =>
               this.setState({
@@ -74,8 +76,8 @@ class AddComment extends Component {
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
-            <option value="3">4</option>
-            <option value="3">5</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
           </Form.Select>
           <Button
             disabled={this.state.newComment.comment.length < 3}
