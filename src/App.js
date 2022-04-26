@@ -11,15 +11,15 @@ function App() {
   return (
     <div className="App">
       <header className="App-header ">
-        <WarningSign text="kenneth" />
-        <MyBadge color="danger" text="verified" />
+        {/* <WarningSign text="kenneth" />
+        <MyBadge color="danger" text="verified" /> */}
         <Container>
-          <h3>Ex. 3 </h3>
+          {/* <h3>Ex. 3 </h3>
           <Row className="justify-content-center">
             <Col xs={6}>
               <SingleBook book={ScifiBook[0]} />
-            </Col>
-          </Row>
+            </Col> */}
+          {/* </Row> */}
         </Container>
         <BookList book={ScifiBook} />
       </header>
