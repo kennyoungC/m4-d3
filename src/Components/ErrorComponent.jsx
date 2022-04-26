@@ -1,5 +1,6 @@
-import { Alert } from "bootstrap"
 const ErrorComponent = () => (
-  <Alert variant="danger">Unable To Fetch Comments</Alert>
+  <div className="alert alert-danger" role="alert">
+    Unable To Fetch Comments!
+  </div>
 )
 export default ErrorComponent

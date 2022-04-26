@@ -30,7 +30,7 @@ class BookList extends Component {
                   (b) => b.title.toLowerCase().indexOf(this.state.query) !== -1
                 )
                 .map((b, i) => (
-                  <Col sm={8} key={i + 1}>
+                  <Col sm={6} key={i + 1}>
                     <SingleBook
                       book={b}
                       selectedBook={this.state.selectedBook}

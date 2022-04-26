@@ -11,8 +11,8 @@ class AddComment extends Component {
   componentDidUpdate(prevProps) {
     if (prevProps.asin !== this.props.asin) {
       this.setState({
-        comment: {
-          ...this.state.comment,
+        newComment: {
+          ...this.state.newComment,
           elementId: this.props.asin,
         },
       })

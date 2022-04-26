@@ -30,7 +30,7 @@ class CommentList extends Component {
               align-items-center"
             >
               <span className="d-flex flex-column align-items-start">
-                {com.comment} <StarRating key={com._id} numOfStars={com.rate} />
+                {com.comment} <StarRating numOfStars={com.rate} />
               </span>
 
               <span className="position-relative see-more">

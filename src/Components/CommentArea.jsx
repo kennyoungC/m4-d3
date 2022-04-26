@@ -38,10 +38,9 @@ class CommentArea extends Component {
             isLoading: false,
             isError: true,
           })
-          throw new Error("data not fetched")
         }
       } catch (error) {
-        console.log(error.message)
+        console.log(error)
         this.setState({
           isLoading: false,
           isError: true,
@@ -56,7 +55,7 @@ class CommentArea extends Component {
         {this.state.isLoading && <LoadingComponent />}
         {this.state.isError && <ErrorComponent />}
         <CommentList commentsArray={this.state.comments} />
-        <AddComment commentsAsin={this.props.asin} />
+        <AddComment asin={this.props.asin} />
       </div>
     )
   }

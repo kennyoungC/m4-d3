@@ -2,8 +2,12 @@ const StarRating = (props) => {
   return (
     <div className="star-rating">
       {" "}
-      {[...Array(props.numOfStars)].map((star) => {
-        return <span className="star text-warning">&#9733;</span>
+      {[...Array(props.numOfStars)].map((star, i) => {
+        return (
+          <span key={i} className="star text-warning">
+            &#9733;
+          </span>
+        )
       })}{" "}
     </div>
   )
