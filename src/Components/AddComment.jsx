@@ -3,12 +3,21 @@ import { FormControl, Form, Button } from "react-bootstrap"
 class AddComment extends Component {
   state = {
     newComment: {
-      rate: "",
+      rate: 1,
       comment: "",
-      elementId: this.props.commentsAsin,
+      elementId: null,
     },
   }
-
+  componentDidUpdate(prevProps) {
+    if (prevProps.asin !== this.props.asin) {
+      this.setState({
+        comment: {
+          ...this.state.comment,
+          elementId: this.props.asin,
+        },
+      })
+    }
+  }
   postData = async (e) => {
     e.preventDefault()
     try {
@@ -26,13 +35,6 @@ class AddComment extends Component {
       )
       if (response.ok) {
         alert("new comment added")
-        this.setState({
-          newComment: {
-            rate: "",
-            comment: "",
-            elementId: this.props.commentsAsin,
-          },
-        })
       } else {
         console.log("error")
         alert("your comment was not sent")
@@ -45,8 +47,6 @@ class AddComment extends Component {
   render() {
     return (
       <div>
-        {/* <Form onSubmit={(e) => this.postData(e)}> */}
-        {/* or */}
         <Form onSubmit={this.postData}>
           <FormControl
             placeholder="Add Comments"
