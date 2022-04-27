@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import { ListGroup, Anchor } from "react-bootstrap"
 import StarRating from "./StarRating"
-class CommentList extends Component {
-  deleteComment = async (id) => {
+const CommentList = (props) => {
+  const deleteComment = async (id) => {
     const resp = await fetch(
       "https://striveschool-api.herokuapp.com/api/comments/" + id,
       {
@@ -19,36 +19,35 @@ class CommentList extends Component {
       alert("comment was successfull deleted")
     }
   }
-  render() {
-    return (
-      <div>
-        <ListGroup>
-          {this.props.commentsArray.map((com) => (
-            <ListGroup.Item
-              key={com._id}
-              className="d-flex justify-content-between
-              align-items-center"
-            >
-              <span className="d-flex flex-column align-items-start">
-                {com.comment} <StarRating numOfStars={com.rate} />
-              </span>
 
-              <span className="position-relative see-more">
-                <i className="bi bi-three-dots"></i>
-                <Anchor
-                  href="#"
-                  className="position-absolute"
-                  onClick={() => this.deleteComment(com._id)}
-                >
-                  delete
-                </Anchor>
-              </span>
-            </ListGroup.Item>
-          ))}
-        </ListGroup>
-      </div>
-    )
-  }
+  return (
+    <div>
+      <ListGroup>
+        {props.commentsArray.map((com) => (
+          <ListGroup.Item
+            key={com._id}
+            className="d-flex justify-content-between
+              align-items-center"
+          >
+            <span className="d-flex flex-column align-items-start">
+              {com.comment} <StarRating numOfStars={com.rate} />
+            </span>
+
+            <span className="position-relative see-more">
+              <i className="bi bi-three-dots"></i>
+              <Anchor
+                href="#"
+                className="position-absolute"
+                onClick={() => deleteComment(com._id)}
+              >
+                delete
+              </Anchor>
+            </span>
+          </ListGroup.Item>
+        ))}
+      </ListGroup>
+    </div>
+  )
 }
 
 export default CommentList
