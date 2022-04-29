@@ -10,7 +10,7 @@ import "bootstrap-icons/font/bootstrap-icons.css"
 function App() {
   return (
     <div className="App">
-      <header className="App-header ">
+      <header className="App-header">
         {/* <WarningSign text="kenneth" />
         <MyBadge color="danger" text="verified" /> */}
         <Container>
